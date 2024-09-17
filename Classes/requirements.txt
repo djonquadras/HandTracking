@@ -1,0 +1,5 @@
+opencv-contrib-python==4.10.0.84
+opencv-python==4.10.0.84
+ipykernel
+numpy==2.0.1
+pillow==10.4.0
