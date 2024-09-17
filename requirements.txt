@@ -5,3 +5,5 @@ numpy==2.0.1
 pillow==10.4.0
 matplotlib==3.9.2
 mediapipe==0.10.14
+pycaw==20240210
+comtypes==1.4.6

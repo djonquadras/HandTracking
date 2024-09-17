@@ -8,7 +8,7 @@ import mediapipe as mp
 confidence = float
 webcam_image = np.ndarray
 rgb_tuple = tuple[int, int, int]
-#coords_vector
+coords_vector = list
 
 # Classe ==============================
 
@@ -69,6 +69,20 @@ class Detector:
                 
                 
         return self.required_lendmark_list
+    
+    def draw_in_position(self,
+                         img: webcam_image,
+                         x_vector: coords_vector,
+                         y_vector: coords_vector,
+                         rgb_selection: rgb_tuple = (0,140,255),
+                         thickness: int = 10):
+        x_vector = x_vector if type(x_vector) == list else [x_vector]
+        y_vector = y_vector if type(y_vector) == list else [y_vector]
+        
+        for x,y in zip(x_vector, y_vector):
+            cv2.circle(img, (x,y), thickness, rgb_selection, cv2.FILLED)
+            
+        return img
 
 
 # Teste de Classe =====================
